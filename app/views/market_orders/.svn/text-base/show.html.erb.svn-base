@@ -1,0 +1,38 @@
+<% if @market_order.buy_quantity > 0 %>
+	<h1><%=title "Buying #{@market_order.buy_quantity} #{link_to(@market_order.item)}" %></h1>
+	<p>
+	  <b>Buyer:</b>
+	  <%=h @market_order.user %>
+	</p>
+	<p>
+	  <b>Colony:</b>
+	  <%=link_to @market_order.colony, @market_order.colony %>
+	</p>
+	<p>
+	  <b>Price:</b>
+	  <%=drachma @market_order.price %>
+	</p>
+	<p>
+	  <b>Destination:</b>
+	  <%=link_to @market_order.destination, @market_order.destination %>
+	</p>
+<% elsif @market_order.sell_quantity > 0 %>
+	<h1><%=title "Selling #{@market_order.sell_quantity} #{link_to(@market_order.item)" %></h1>
+	<p>
+	  <b>Seller:</b>
+	  <%=h @market_order.user %>
+	</p>
+	<p>
+	  <b>Colony:</b>
+	  <%=link_to @market_order.colony, @market_order.colony %>
+	</p>
+	<p>
+	  <b>Price:</b>
+	  <%=drachma @market_order.price %>
+	</p>
+<% else %>
+	<p>This market order is closed.</p>
+<% end %>
+
+<%= link_to 'Edit', edit_market_order_path(@market_order) %> |
+<%= link_to 'Back', market_orders_path %>

@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/odyssey30k/!svn/ver/6/trunk/test/fixtures
+END
+squadrons.yml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/squadrons.yml
+END
+buildings.yml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/buildings.yml
+END
+starships.yml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/starships.yml
+END
+items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/items.yml
+END
+crews.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/crews.yml
+END
+roles.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/odyssey30k/!svn/ver/5/trunk/test/fixtures/roles.yml
+END
+node_links.yml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/node_links.yml
+END
+deposits.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/deposits.yml
+END
+celestial_bodies.yml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/celestial_bodies.yml
+END
+building_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/building_items.yml
+END
+star_systems.yml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/star_systems.yml
+END
+user_knowledges.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/6/trunk/test/fixtures/user_knowledges.yml
+END
+market_orders.yml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/market_orders.yml
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/odyssey30k/!svn/ver/5/trunk/test/fixtures/users.yml
+END
+knowledges.yml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/knowledges.yml
+END
+workshop_queues.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/workshop_queues.yml
+END
+item_attributes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/item_attributes.yml
+END
+events.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/events.yml
+END
+clusters.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/clusters.yml
+END
+cashes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/cashes.yml
+END
+item_raw_materials.yml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/item_raw_materials.yml
+END
+colonies.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/colonies.yml
+END
+colonist_knowledges.yml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/colonist_knowledges.yml
+END
+colonists.yml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/odyssey30k/!svn/ver/2/trunk/test/fixtures/colonists.yml
+END

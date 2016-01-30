@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  colony_id: 1
+  building_id: 1
+  lifeform_id: 1
+  quantity: 1
+
+two:
+  colony_id: 1
+  building_id: 1
+  lifeform_id: 1
+  quantity: 1

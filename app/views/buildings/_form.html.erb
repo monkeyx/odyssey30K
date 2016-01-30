@@ -1,0 +1,23 @@
+<% form_for(@building) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :colony_id %><br />
+    <%= f.select :colony_id, options_from_models(@colonies) %>
+  </p>
+  <p>
+    <%= f.label :building_type_id %><br />
+    <%= f.select :building_type_id, options_from_models(@building_types) %>
+  </p>
+  <p>
+    <%= f.label :owner_id %><br />
+    <%= f.select :owner_id, options_from_models(@users,false,:login) %>
+  </p>
+  <p>
+    <%= f.label :automated %><br />
+    <%= f.checkbox :automated %>
+  </p>
+  <p>
+    <%= f.submit action_name %>
+  </p>
+<% end %>

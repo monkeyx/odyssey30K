@@ -1,0 +1,6 @@
+<h1><%=title "Editing Market Order"%></h1>
+
+<%=render :partial => 'form', :locals => {:action_name => "Update"} %>
+
+<%= link_to 'Show', @market_order %> |
+<%= link_to 'Back', market_orders_path %>

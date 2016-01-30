@@ -1,0 +1,23 @@
+<% form_for(@colony) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :celestial_body_id %><br />
+    <%= f.select :celestial_body_id, options_from_models(@celestial_bodies) %>
+  </p>
+  <p>
+    <%= f.label :governor_id %><br />
+    <%= f.select :governor_id, options_from_models(@users) %>
+  </p>
+  <p>
+    <%= f.label :tax_rate %><br />
+    <%= f.text_field :tax_rate %>
+  </p>
+  <p>
+    <%= f.submit action_name %>
+  </p>
+<% end %>

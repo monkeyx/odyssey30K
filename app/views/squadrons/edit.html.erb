@@ -1,0 +1,20 @@
+<h1><%=title "Editing squadron" %></h1>
+
+<% form_for(@squadron) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :squadron_leader_id %><br />
+    <%= f.text_field :squadron_leader_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @squadron %> |
+<%= link_to 'Back', squadrons_path %>

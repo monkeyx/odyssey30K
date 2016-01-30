@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/odyssey30k/!svn/ver/11/trunk/db/migrate
+END
+16_create_money.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/odyssey30k/!svn/ver/2/trunk/db/migrate/16_create_money.rb
+END
+05_create_celestial_bodies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/odyssey30k/!svn/ver/2/trunk/db/migrate/05_create_celestial_bodies.rb
+END
+18_create_production_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/odyssey30k/!svn/ver/2/trunk/db/migrate/18_create_production_items.rb
+END
+07_create_deposits.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/2/trunk/db/migrate/07_create_deposits.rb
+END
+02_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/odyssey30k/!svn/ver/5/trunk/db/migrate/02_create_users.rb
+END
+04_create_star_systems.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/odyssey30k/!svn/ver/2/trunk/db/migrate/04_create_star_systems.rb
+END
+14_create_market_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/odyssey30k/!svn/ver/2/trunk/db/migrate/14_create_market_orders.rb
+END
+03_create_clusters.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/2/trunk/db/migrate/03_create_clusters.rb
+END
+15_create_knowledges.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/odyssey30k/!svn/ver/2/trunk/db/migrate/15_create_knowledges.rb
+END
+19_create_user_knowledges.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/odyssey30k/!svn/ver/6/trunk/db/migrate/19_create_user_knowledges.rb
+END
+17_create_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/odyssey30k/!svn/ver/6/trunk/db/migrate/17_create_events.rb
+END
+12_create_colonists.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/odyssey30k/!svn/ver/11/trunk/db/migrate/12_create_colonists.rb
+END
+10_create_squadrons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/2/trunk/db/migrate/10_create_squadrons.rb
+END
+01_add_session_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/odyssey30k/!svn/ver/2/trunk/db/migrate/01_add_session_table.rb
+END
+11_create_buildings.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/2/trunk/db/migrate/11_create_buildings.rb
+END
+08_create_colonies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/6/trunk/db/migrate/08_create_colonies.rb
+END
+13_create_crews.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/odyssey30k/!svn/ver/6/trunk/db/migrate/13_create_crews.rb
+END
+06_create_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/odyssey30k/!svn/ver/2/trunk/db/migrate/06_create_items.rb
+END
+20_create_passwords.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/7/trunk/db/migrate/20_create_passwords.rb
+END
+09_create_starships.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/6/trunk/db/migrate/09_create_starships.rb
+END

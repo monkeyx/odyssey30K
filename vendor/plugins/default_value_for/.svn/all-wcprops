@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/2/trunk/vendor/plugins/default_value_for
+END
+LICENSE.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/odyssey30k/!svn/ver/2/trunk/vendor/plugins/default_value_for/LICENSE.TXT
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/odyssey30k/!svn/ver/2/trunk/vendor/plugins/default_value_for/test.rb
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/odyssey30k/!svn/ver/2/trunk/vendor/plugins/default_value_for/Rakefile
+END
+README.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/odyssey30k/!svn/ver/2/trunk/vendor/plugins/default_value_for/README.rdoc
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/odyssey30k/!svn/ver/2/trunk/vendor/plugins/default_value_for/init.rb
+END
+default_value_for.gemspec
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/odyssey30k/!svn/ver/2/trunk/vendor/plugins/default_value_for/default_value_for.gemspec
+END

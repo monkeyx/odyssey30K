@@ -1,0 +1,1 @@
+	<li class="page_item"><%=menu_item "Olympus", "/olympus" %></li>

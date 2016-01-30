@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/odyssey30k/!svn/ver/7/trunk/app/views/passwords
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/7/trunk/app/views/passwords/new.html.erb
+END
+reset.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/odyssey30k/!svn/ver/7/trunk/app/views/passwords/reset.html.erb
+END

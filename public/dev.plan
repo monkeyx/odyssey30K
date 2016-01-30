@@ -1,0 +1,78 @@
+BUGS
+====
+
+Freemen:
+
+Citizen:
+
+Senator:
+
+Zeus:
+* Edit Colony - planet drop down doesn't reflect stored planet
+
+MILESTONES
+==================
+
+Milestone 1 : Alpha 
+- Seed Items
+- Seed Map and Colonies
+- Seed Market
+- Basic Views
+- User Authentication and Authorisation
+- Starship: Profile
+- Starship: Thrust Movement
+- Starship: Take Off and Docking
+- Starship: Scanning
+- Starship: Probing
+- Starship: Buy and Sell Goods
+- Starship: Install and Scrap Section
+- User: Cash Transaction
+- User: News
+- User: Profile
+- User: Basic Account Management
+- Map: Galaxy Map
+- Map: Star Systems
+- Map: Planets
+- Oracle: Item Database
+- Market: Index
+- Market: Show
+
+Milestone 2: Starships Complete
+- Starship: Commission
+- Space Combat
+- Space Boarding
+- Starship: Node Travel
+- Starship: Damage & Repair
+- Starship: Fatigue & Maintenance
+- Starship: Crew R&R
+- Starship: Cloaking
+- Starship: Mining
+- Starship: Harvesting
+
+Milestone 3: Buildings
+
+Milestone 4: Colonies
+
+Milestone 5: R&D
+
+Milestone 6: Quest Editor
+
+Milestone 7: Tutorial Quests
+
+Milestone 8: Beta
+
+IDEAS
+=====================
+
+Resources:
+- Fuel - 2 Hydrocarbons
+- Light Alloy - 2 Metals
+- Tough Alloy - 2 Metals, 1 Minerals and 1 Hydrocarbons
+
+Buildings:
+- Refinery - convert hydrocarbons to fuel
+- Smithy - convert metals to light alloys
+- Steelworks - convert ores to tough alloy
+
+Bonds:
+- Tap into colonist savings as a citizen

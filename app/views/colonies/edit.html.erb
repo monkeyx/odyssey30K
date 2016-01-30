@@ -1,0 +1,6 @@
+<h1><%=title "Editing Colony #{@colony.name}"%></h1>
+
+<%=render :partial => 'form', :locals => {:action_name => 'Update'} %>
+
+<%= link_to 'Show', @colony %> |
+<%= link_to 'Back', colonies_path %>

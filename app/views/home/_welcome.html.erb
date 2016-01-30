@@ -1,0 +1,39 @@
+<h3>Welcome <%=current_user.title%> <%=current_user.login%></h3>
+<p>
+	<% model_name = current_user.starship_count == 1 ? "ship" : "ships" %>
+	You have <%=link_to "#{current_user.starship_count} #{model_name}", starships_path %> awaiting your orders.
+</p>
+
+<% if current_user.building_count > 0 %>
+<p>
+	<% model_name = current_user.building_count == 1 ? "building" : "buildings" %>
+	You own <%=link_to "#{current_user.building_count} #{model_name}", buildings_path %>.
+</p>
+<% end %>
+
+<% if current_user.colony_count > 0 %>
+<p>
+	You are governor of <% 
+	n = 0
+	current_user.colonies each do |colony| %>
+	<%=link_to colony.name, colony %><%if n < current_user.colony_count - 1 %>,<% end %>
+	<% 
+	n += 1
+	end %>.
+</p>
+<% end %>
+
+<p>
+	Your current balance is <%=drachma(current_user.drachma)%>.
+</p>
+
+<p>
+	You have no new messages.
+</p>
+
+<% if current_user.market_order_count > 0 %>
+<p>
+	<% model_name = current_user.market_order_count == 1 ? "market order" : "market orders" %>
+	You have <%=link_to "#{current_user.market_order_count} #{model_name}", market_orders_path %> open at present.
+</p>
+<% end %>

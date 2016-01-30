@@ -1,0 +1,38 @@
+<h1><%=title "#{@celestial_body.name}"%></h1>
+
+<%=render :partial => 'data', :locals => {:celestial_body => @celestial_body} %>
+
+<% if current_user.zeus? %>
+
+<h2>Deposits</h2>
+<% if @celestial_body.deposits.any? %>
+<table>
+	<tr>
+		<th>Deposit</th>
+		<th>Yield</th>
+		<th>Reserves</th>
+		<th>Growth</th>
+	</tr>
+	<% @celestial_body.deposits.each do |deposit| %>
+	<tr>
+		<td><%=item_link deposit.item.name, deposit.item %></td>
+		<td><%=h deposit.deposit_yield %></td>
+		<td><%=h deposit.deposit_reserves %></td>
+		<td><%=h deposit.deposit_growth %></td>
+		<td><%= link_to 'Edit', edit_deposit_path(deposit) %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%= link_to 'Destroy', deposit, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+<% else %>
+<p>No deposits</p>
+<% end %>
+<p>
+	<%= link_to 'New Deposit', "#{new_deposit_path}?celestial_body_id=#{@celestial_body.id}" %>
+</p>
+
+<%= link_to 'Edit', edit_celestial_body_path(@celestial_body) %> |
+<%= link_to 'Back', @celestial_body.star_system %>
+
+<% end %>

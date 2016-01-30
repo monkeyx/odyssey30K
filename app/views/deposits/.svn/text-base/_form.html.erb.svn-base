@@ -1,0 +1,24 @@
+<% form_for(@deposit) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :celestial_body_id %>
+
+  <p>
+    <%= f.label :item_id %><br />
+    <%= f.select :item_id, options_from_models(@items) %>
+  </p>
+  <p>
+    <%= f.label :yield %><br />
+    <%= f.text_field :deposit_yield %>
+  </p>
+  <p>
+    <%= f.label :reserves %><br />
+    <%= f.text_field :deposit_reserves %>
+  </p>
+  <p>
+    <%= f.label :growth %><br />
+    <%= f.text_field :deposit_growth %>
+  </p>
+  <p>
+    <%= f.submit action_name %>
+  </p>
+<% end %>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/odyssey30k/!svn/ver/10/trunk/app/views/celestial_bodies
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/odyssey30k/!svn/ver/2/trunk/app/views/celestial_bodies/edit.html.erb
+END
+_data.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/odyssey30k/!svn/ver/10/trunk/app/views/celestial_bodies/_data.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/odyssey30k/!svn/ver/2/trunk/app/views/celestial_bodies/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/odyssey30k/!svn/ver/10/trunk/app/views/celestial_bodies/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/odyssey30k/!svn/ver/2/trunk/app/views/celestial_bodies/_form.html.erb
+END

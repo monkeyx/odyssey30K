@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  colony_id: 1
+  item_id: 1
+  buy_quantity: 1
+  sell_quantity: 1
+  min_price: 1.5
+  max_prce: 1.5
+
+two:
+  user_id: 1
+  colony_id: 1
+  item_id: 1
+  buy_quantity: 1
+  sell_quantity: 1
+  min_price: 1.5
+  max_prce: 1.5

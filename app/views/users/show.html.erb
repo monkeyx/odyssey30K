@@ -1,0 +1,20 @@
+<h2><%=title "#{@user.title} #{@user.login}"%></h2>
+<p>
+	A member of the <em>politeia</em> since <%=format_date(@user.activated_at, true)%>.
+</p>
+<h3>Latest News</h3>
+<% events = Event.user(@user).major.recent_events %>
+<% if events.size < 1%>
+	<p>None yet.</p>
+<% else %>
+	<table>
+	<% events.each do |event| %>
+	<tr>
+		<th><%=format_date event.created_at, true%></th>
+	</tr>
+	<tr>
+		<td colspan="2"><%=h event.description %></td>	
+	</tr>
+	<% end %>
+	</table>
+<% end %>

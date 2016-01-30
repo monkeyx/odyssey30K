@@ -1,0 +1,50 @@
+<h1><%=title "Listing Star Systems"%></h1>
+<%=filter_form(StarSystem::ALLOWED_FILTERS)%>
+<table>
+  <tr>
+    <th>Name</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Location</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Star type</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Sec zone</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Cluster</th>
+	<td>&nbsp;|&nbsp;</td>
+	<th>Colonies</th>
+  </tr>
+
+<% @star_systems.each do |star_system| %>
+  <tr class="security_<%=star_system.sec_zone%>">
+    <td><%=link_to star_system.name, star_system %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td>(<%=h star_system.x %>, <%=h star_system.y %>)</td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h_symbol star_system.star_type %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h_symbol star_system.sec_zone %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h star_system.cluster.name %></td>
+	<td>&nbsp;|&nbsp;</td>
+	<td>
+		<% if star_system.colonies.any? %>
+		<ul>
+			<% star_system.colonies.each do |colony| %>
+			<li><%=link_to colony.name, colony %></li>
+			<% end %>
+		</ul>
+		<% end %>
+	</td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Edit', edit_star_system_path(star_system) %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Destroy', star_system, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Star System', new_star_system_path %> |
+<%= link_to 'Admin Home', admin_path %>

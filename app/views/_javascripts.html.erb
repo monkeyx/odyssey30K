@@ -1,0 +1,14 @@
+<% if has_content? :editable_jquery %>
+	<%=javascript_tag(yield(:editable_jquery))%>
+<% end %>
+<% if has_content? :hideable_section_jquery %>
+	<%=javascript_tag(yield(:hideable_section_jquery))%>
+<% end %>
+<% if has_content? :toolbar_jquery %>
+	<%=javascript_tag(yield(:toolbar_jquery))%>
+<% end %>
+<%=javascript_tag "$(document).ready(function() {
+	colorbox = jQuery.colorbox;
+	$('.item-link').colorbox();      
+	$('.colorbox').colorbox();  
+});" %>

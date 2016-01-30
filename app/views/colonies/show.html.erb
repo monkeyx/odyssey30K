@@ -1,0 +1,106 @@
+<h1><%=title "#{@colony.name} Colony"%></h1>
+
+<p>
+  <b>Location:</b>
+  <%=link_to @colony.celestial_body.name, @colony.celestial_body%> in the <%=link_to @colony.celestial_body.star_system.name, @colony.celestial_body.star_system%> System.
+</p>
+
+<p>
+  <b>Governor:</b>
+  <%=link_to_user @colony.governor %>
+</p>
+
+<p>
+  <b>Tax rate:</b>
+  <%=h @colony.tax_rate %>%
+</p>
+
+<p>
+  <b>Building Policy:</b>
+  <%=h_symbol @colony.building_policy %>
+</p>
+
+<%=render :partial => "/market_orders/statistics", :locals => {:colony => @colony} %>
+<p><b><%=link_to 'more', "#{market_orders_path}?colony=#{@colony.id}" %></b></p>
+
+<%=render :partial => "/events", :locals => {:model => @colony} %>
+
+<% if current_user.zeus? %>
+
+<h2>Population</h2>
+<p>
+	<% if @colony.population.size > 0 %>
+	<ul>
+		<% @colony.population.each do |lifeform, quantity| %>
+		<li>
+			<%=h quantity%> x <%=h lifeform%>
+		</li>
+		<% end %>
+	</ul>
+	<% else %>
+	None
+	<% end %>
+</p>
+
+<h2>Buildings</h2>
+
+<% if @colony.buildings.any? %>
+<table>
+	<tr>
+		<th>Owner</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Building</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Level</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Efficiency</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Employees</th>
+	</tr>
+	<% @colony.buildings.each do |building |%>
+	<tr>
+		<td><%=link_to_user building.owner %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=link_to building, building %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h building.level%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h building.efficiency%>%</td>
+		<td>
+		<% if building.colonists.any? %>
+			<ul>
+			<% building.colonists.each do |colonist |%>
+			<li>
+				<% if colonist.unique? %>
+					<%=h colonist.name%> (<%=h colonist.wealth%> <%=h colonist.lifeform%>)
+					<% if colonist.knowledge.any? %>
+					<ul>
+						<% colonist.knowledge.each do |knowledge| %>
+						<li><%=h knowledge%></li>
+						<% end %>
+					</ul>
+					<% end %>
+				<% else %>
+					<%=h colonist.quantity%> x <%=h colonist.wealth%> <%=h colonist.name%> (<%=h colonist.morale%>% morale)
+				<% end %>
+			</li>
+			<% end %>
+			</ul>
+		<% else %>
+		None
+		<% end %>
+		</td>
+		<td><%= link_to 'Edit', edit_building_path(building) %></td>
+		<td>&nbsp;|&nbsp;</td>
+    	<td><%= link_to 'Destroy', building, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+<% else %>
+<p>No buildings yet.</p>
+<% end %>
+
+<%= link_to 'Edit', edit_colony_path(@colony) %> |
+<%= link_to 'Back', colonies_path %>
+
+<% end %>

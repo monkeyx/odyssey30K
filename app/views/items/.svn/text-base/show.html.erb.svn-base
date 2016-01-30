@@ -1,0 +1,87 @@
+<h1><%=title @item.name %></h1>
+<p>
+  <b>Mass:</b>
+  <%=h @item.mass %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h_symbol @item.category %>
+</p>
+
+<p>
+  <b>Sub category:</b>
+  <%=h_symbol @item.sub_category %>
+</p>
+
+<% if @item.restricted %>
+<p>
+  <b>Restricted:</b>
+  <%=h @item.restricted ? 'Yes' : 'No' %>
+</p>
+<% end %>
+
+<% if @item.knowledge %>
+<p>
+  <b>Required Knowledge:</b>
+  <% if current_user.has_role?('senator') %>
+  	<%=link_to @item.knowledge.name, @item.knowledge %>
+  <% else %>
+  	Senators Only	
+  <% end %>
+</p>
+<% end %>
+
+<% @item.item_attributes.sort{|a,b| a[0]<=>b[0]}.each do |key, value| %>
+<p>
+	<b><%=h_symbol key%>:</b>
+	<% if key == Attributes::WEAPON_TYPE %>
+	<%=h Attributes.weapon_type(value)%>
+	<% elsif key == Attributes::KNOWLEDGE_BEARER %>
+	<%=h Attributes.knowledge_bearer(value)%>
+	<% elsif key == Attributes::TRAINED %>
+	<%=h Attributes.trained(value)%>
+	<% elsif key == Attributes::UNIQUE_INDIVIDUAL %>
+	<%=h value == 1 ? 'Yes' : 'No' %>
+	<% elsif key == Attributes::EDUCATION %>
+	<%=h Attributes.educates(value) %>
+	<% elsif key == Attributes::BREEDS_ITEM %>
+	<%=item_link @item.breeds_item.name, @item.breeds_item %>
+	<% else %>
+	<%=format_number value%>
+	<% end %>
+</p>
+<% end %>
+
+<% if @item.raw_materials.any? %>
+<p>
+	<b>Raw Materials:</b>
+	<ul>
+		<% @item.raw_materials.each do |item, quantity| %>
+		<li>
+			<%=format_number quantity%> x <%=item_link item.name, item%>
+		</li>
+		<% end %>
+	</ul>
+</p>
+<% end %>
+<% unless @item.notes.blank? || @item.notes == 'None' %>
+<p>
+  <b>Notes:</b>
+  <%=h @item.notes %>
+</p>
+<% end %>
+
+<% if current_user.zeus? %>
+<p>
+  <p>
+	<b>User Type Restriction:</b>
+	<%=h_symbol @item.user_type_restriction %>
+  </p>
+	
+  <b>Raw Cost:</b>
+  <%=drachma @item.raw_cost %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<% end %>

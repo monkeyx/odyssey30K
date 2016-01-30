@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/odyssey30k/!svn/ver/5/trunk/vendor/plugins/role_requirement
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/odyssey30k/!svn/ver/5/trunk/vendor/plugins/role_requirement/init.rb
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/odyssey30k/!svn/ver/5/trunk/vendor/plugins/role_requirement/ChangeLog
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/odyssey30k/!svn/ver/5/trunk/vendor/plugins/role_requirement/MIT-LICENSE
+END
+README.textile
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/odyssey30k/!svn/ver/5/trunk/vendor/plugins/role_requirement/README.textile
+END

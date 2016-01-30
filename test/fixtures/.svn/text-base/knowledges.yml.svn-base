@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  knowledge_type: MyString
+  prequisite_id: 1
+  allows_production_id: 1
+  officer_skill_attribute: MyString
+  attribute_modifier: 1.5
+
+two:
+  name: MyString
+  knowledge_type: MyString
+  prequisite_id: 1
+  allows_production_id: 1
+  officer_skill_attribute: MyString
+  attribute_modifier: 1.5

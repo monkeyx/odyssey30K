@@ -1,0 +1,20 @@
+<h1><%=title "Rejoin the Adventure"%></h1>
+
+<% form_tag session_path do -%>
+<p><%= label_tag 'Your email address:' %><br />
+<%= text_field_tag 'email', @email %></p>
+
+<p><%= label_tag 'Your password:' %><br/>
+<%= password_field_tag 'password', nil %></p>
+
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+
+<p><%= submit_tag 'To the stars!' %></p>
+<% end -%>
+<p>
+	Not already a freeman with your own star ship? <%=link_to "Claim your inheritence now!", signup_path %>.
+</p>
+<p>
+	<%=link_to "Forgot your password?", forgot_password_path %>
+</p>

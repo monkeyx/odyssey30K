@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/odyssey30k/!svn/ver/12/trunk/app/views/items
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/odyssey30k/!svn/ver/2/trunk/app/views/items/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/odyssey30k/!svn/ver/10/trunk/app/views/items/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/odyssey30k/!svn/ver/2/trunk/app/views/items/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/odyssey30k/!svn/ver/12/trunk/app/views/items/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/odyssey30k/!svn/ver/2/trunk/app/views/items/_form.html.erb
+END

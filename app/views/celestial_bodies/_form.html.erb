@@ -1,0 +1,40 @@
+<% form_for(@celestial_body) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :body_type %><br />
+    <%= f.select :body_type, options_from_symbols(CelestialBody::BODY_TYPE) %>
+  </p>
+  <p>
+    <%= f.label :star_system_id %><br />
+    <%= f.select :star_system_id, options_from_models(@star_systems) %>
+  </p>
+  <p>
+    <%= f.label :orbital_ring %><br />
+    <%= f.select :orbital_ring, options_from_range(1..10,true) %>
+  </p>
+  <p>
+    <%= f.label :orbital_quadrant %><br />
+	<%= radio_buttons_from_range(f, :orbital_quadrant, (1..4), true) %>
+  </p>
+  <p>
+    <%= f.label :gravity_rating %><br />
+    <%= f.text_field :gravity_rating %>
+  </p>
+  <p>
+    <%= f.label :atmosphere_type %><br />
+    <%= f.select :atmosphere_type, options_from_symbols(CelestialBody::ATMOSPHERE_TYPES) %>
+  </p>
+  <p>
+    <%= f.label :surface_type %><br />
+    <%= f.select :surface_type, options_from_symbols(CelestialBody::SURFACE_TYPES) %>
+  </p>
+  <p>
+    <%= f.submit action_name %>
+  </p>
+<% end %>
+

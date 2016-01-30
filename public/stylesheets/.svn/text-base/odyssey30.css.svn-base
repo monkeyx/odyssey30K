@@ -1,0 +1,76 @@
+.security_alpha {
+	border: blue 1px solid;
+}
+.security_beta,
+.unrestricted,
+.open {
+	border: green 1px solid;
+}
+.security_gamma,
+.limited {
+	border: orange 1px solid;
+}
+.security_delta,
+.restricted,
+.closed {
+	border: red 1px solid;
+}
+
+#galaxy-map {
+	background: black;
+	color: white;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+blockquote {
+	text-align: right;
+	font-style: italic;
+	font-size: 12px; 
+}
+
+#current-date {
+	margin-top: 5px;
+	text-align: right;
+	margin-right: 20px;
+	font: Helvetica, 'Arial Greek', verdana,helvetica,arial,geneva,Tahoma;
+	font-size: 12px;
+}
+
+.editable {
+	border-bottom: dotted 2px #325A62;
+}
+
+.editable-note {
+	font-size: 9px;
+}
+
+.tooltip {
+	
+}
+
+.section-menu {
+	font-size: 10px;
+	font-style:normal; 
+	cursor: pointer;
+}
+
+.section-content {
+	display:block;
+}
+
+.notice {
+	color: #088A85
+}
+
+.warning {
+	color: #DF7401
+}
+
+.error, .form-error {
+	color: #FE2E2E
+}
+
+.url-selector {
+	font-size: 12px;
+}

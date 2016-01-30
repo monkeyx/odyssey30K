@@ -1,0 +1,36 @@
+<h1><%= title "Editing starship"%></h1>
+
+<% form_for(@starship) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :captain_id %><br />
+    <%= f.text_field :captain_id %>
+  </p>
+  <p>
+    <%= f.label :squadron_id %><br />
+    <%= f.text_field :squadron_id %>
+  </p>
+  <p>
+    <%= f.label :celestial_body_id %><br />
+    <%= f.text_field :celestial_body_id %>
+  </p>
+  <p>
+    <%= f.label :colony_id %><br />
+    <%= f.text_field :colony_id %>
+  </p>
+  <p>
+    <%= f.label :chassis_id %><br />
+    <%= f.text_field :chassis_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @starship %> |
+<%= link_to 'Back', starships_path %>

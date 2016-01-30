@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  mass: 1
+  category: MyString
+  sub_category: MyString
+  restricted: false
+  knowledge_id: 1
+  citizens_only: false
+  senators_only: false
+
+two:
+  name: MyString
+  mass: 1
+  category: MyString
+  sub_category: MyString
+  restricted: false
+  knowledge_id: 1
+  citizens_only: false
+  senators_only: false

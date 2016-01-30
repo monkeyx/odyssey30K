@@ -1,0 +1,27 @@
+<h1><%= title "Listing squadrons"%></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Squadron leader</th>
+  </tr>
+
+<% @squadrons.each do |squadron| %>
+  <tr>
+    <td><%=h squadron.name %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h squadron.squadron_leader_id %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Show', squadron %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Edit', edit_squadron_path(squadron) %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Destroy', squadron, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New squadron', new_squadron_path %>

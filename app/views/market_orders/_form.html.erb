@@ -1,0 +1,38 @@
+<h2>Buy / Sell at <%=h @market_order.colony%></h2>
+
+<% form_for(@market_order, :id => 'market_order') do |f| %>
+	<div class="form-error"><%= f.error_messages %></div>
+  
+  <%=f.hidden_field :colony_id %>
+  <%=f.hidden_field :destination_id %>
+  <%=f.hidden_field :destination_model %>
+  <p>
+    <%= f.label :item_id %><br />
+    <%= f.select :item_id, options_from_models(Item.known_by_user(current_user)) %>
+  </p>
+  <p>
+    <%= f.label :buy_quantity %><br />
+    <%= f.text_field :buy_quantity, :value => "0" %>
+  </p>
+  <p>
+    <%= f.label :sell_quantity %><br />
+    <%= f.text_field :sell_quantity, :value => "0" %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price, :value => "0" %>
+  </p>
+  <p>
+    <%= f.submit "Buy/Sell" %>
+  </p>
+<% end %>
+
+ <script type="text/javascript"> 
+    $(document).ready(function() { 
+        $('#new_market_order').ajaxForm({ 
+        dataType:  'json', 
+        success:   processAjaxJsonForm
+    	}); 
+    }); 
+	
+</script> 

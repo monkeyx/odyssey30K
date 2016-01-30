@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  captain_id: 1
+  squadron_id: 1
+  celestial_body_id: 1
+  colony_id: 1
+  chassis_id: 1
+
+two:
+  name: MyString
+  captain_id: 1
+  squadron_id: 1
+  celestial_body_id: 1
+  colony_id: 1
+  chassis_id: 1

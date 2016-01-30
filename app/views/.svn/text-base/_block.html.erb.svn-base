@@ -1,0 +1,14 @@
+<div class="Block"> 
+	<div class="Block-body"> 
+		<% if header_symbol %>
+		<div class="BlockHeader">
+			<%= yield header_symbol %>
+		</div>
+		<% end %>
+		<div class="BlockContent"> 
+			<div class="BlockContent-body"> 
+				<%= yield body_symbol %>
+			</div>
+		</div>
+	</div>
+</div>

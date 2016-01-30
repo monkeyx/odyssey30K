@@ -1,0 +1,9 @@
+<blockquote>
+	"<%=$QUOTES.random%>"
+</blockquote>
+
+<% if logged_in? %>
+	<%=render :partial => 'welcome' %>
+<% else %>
+	<%=render :partial => 'introduction' %>
+<% end %>

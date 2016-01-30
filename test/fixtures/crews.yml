@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  starship_id: 1
+  lifeform_id: 1
+  quantity: 1
+
+two:
+  starship_id: 1
+  lifeform_id: 1
+  quantity: 1

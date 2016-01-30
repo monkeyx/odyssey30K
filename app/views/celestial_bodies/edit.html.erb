@@ -1,0 +1,6 @@
+<h1><%=title "Editing #{@celestial_body.name} (#{h_symbol(@celestial_body.body_type)})"%></h1>
+
+<%=render :partial => 'form', :locals => {:action_name => 'Update'} %>
+
+<%= link_to 'Show', @celestial_body %> |
+<%= link_to 'Back', @celestial_body.star_system %>

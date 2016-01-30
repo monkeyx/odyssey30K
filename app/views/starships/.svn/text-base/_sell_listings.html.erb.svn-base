@@ -1,0 +1,38 @@
+	<% items.each do |item| %>
+	  <%
+	  	suggested_price = MarketOrder.mean_buy_price(@starship.colony, [item])
+		suggested_price = MarketOrder.suggested_sell_price(@starship.colony, [item]) if suggested_price == 0
+		if @market_order.ship_crew
+			quantity_to_sell = @starship.count_crew(item)
+		else
+			quantity_to_sell = @starship.count_item(item)
+		end
+		form_id = "market_order_#{item.id}" %>
+	  <% form_for(@market_order, :html => {:id => form_id, :method => 'post'}) do |f| %>
+	  	<%=f.hidden_field :colony_id %>
+	  	<%=f.hidden_field :destination_id %>
+	  	<%=f.hidden_field :destination_model %>
+		<%=f.hidden_field :ship_crew %>
+	  	<%=f.hidden_field :item_id, :value => item.id %>
+		<tr>
+		<td><%=item_link item.name, item %></td>
+		<td><%=h @starship.count_item(item) %></td>
+		<td>
+			<%= f.text_field :price, :value => suggested_price, :size => 4, :maxlength => 12 %>
+		</td>
+		<td>
+		    <%= f.text_field :sell_quantity, :value => quantity_to_sell, :size => 4, :maxlength => 12 %>
+		</td>
+		<td><%= f.submit "Sell" %></td>
+		</tr>
+		<script type="text/javascript"> 
+		    $(document).ready(function() { 
+		        $('#<%=form_id%>').ajaxForm({ 
+		        dataType:  'json', 
+				beforeSubmit: preProcessAjaxForm,
+		        success:   processAjaxJsonForm
+		    	}); 
+		    }); 
+		</script> 
+	  <% end %>
+	<% end %>

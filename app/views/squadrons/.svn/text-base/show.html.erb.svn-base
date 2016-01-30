@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @squadron.name %>
+</p>
+
+<p>
+  <b>Squadron leader:</b>
+  <%=h @squadron.squadron_leader_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_squadron_path(@squadron) %> |
+<%= link_to 'Back', squadrons_path %>

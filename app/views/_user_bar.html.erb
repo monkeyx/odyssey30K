@@ -1,0 +1,32 @@
+<% content_for :user_bar_header do %>
+	<% if logged_in? -%>
+	  Greetings <%= link_to_current_user :content_method => :login %>!
+	<% else -%>
+	  <%= link_to 'Greetings Stranger!', login_path, :title => 'Rejoin the adventure!', :style => 'border: none;' %>
+	<% end -%>
+<% end %>
+
+<% content_for :user_bar_content do %>
+	<% if logged_in? %>
+	<% if current_starship %>
+		<h3><%=link_to current_starship.name, current_starship %></h3>
+		<p>Currently <%=starship_location(current_starship)%></p>
+	<% elsif current_colony %>
+		<h3><%=h current_colony.name %></h3>
+	<% elsif current_building %>
+		<h3><%=h current_building.name %></h3>
+	<% end %>
+	<% if has_content? :toolbar %>
+		<%= yield :toolbar %>
+	<% end %>
+	<h3>Balance</h3>
+	<p>
+		<%=drachma(current_user.drachma)%> &mdash;
+		<%=link_to "Ledger", "/ledger", :class => 'colorbox' %>
+	</p>
+	<% end %>
+<% end %>
+
+<div class="sidebar1">
+	<%=render_block(:user_bar_header, :user_bar_content) %>	
+</div>

@@ -1,0 +1,57 @@
+<% form_for(@item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :mass %><br />
+    <%= f.text_field :mass %>
+  </p>
+  <p>
+    <%= f.label :category %><br />
+    <%= f.select :category, options_from_symbols(Item::CATEGORIES) %>
+  </p>
+  <p>
+    <%= f.label :sub_category %><br />
+    <%= f.select :sub_category, options_from_symbols(Item::SUB_CATEGORIES) %>
+  </p>
+  <p>
+    <%= f.label :restricted %><br />
+    <%= f.check_box :restricted %>
+  </p>
+  <p>
+    <%= f.label :knowledge_id %><br />
+    <%= f.select :knowledge_id, options_from_models(@knowledges) %>
+  </p>
+  <p>
+    <%= f.label :user_type_restriction %><br />
+    <%= radio_buttons_from_symbols(f, :user_type_restriction, User::CHARACTER_TYPES) %>
+  </p>
+  <div id="attributes">
+  	<h2>Custom Attributes</h2>
+  	<% f.fields_for :item_attributes do |attributes_fields| %>
+  		<% @item.item_attributes.each do |name, value| %>
+		<p>
+		<%=attributes_fields.label name%><br/>
+		<%= attributes_fields.text_field name, :value => value %>
+		</p>
+		<% end %>
+	<% end %>
+  </div>
+  <div id="raw-materials">
+  	<h2>Raw Materials</h2>
+  	<% f.fields_for :raw_materials do |raw_materials_fields| %>
+  		<% @item.raw_materials.each do |item, quantity| %>
+		<p>
+		<%=raw_materials_fields.label item.name%><br/>
+		<%= raw_materials_fields.text_field item.id, :value => quantity %>
+		</p>
+		<% end %>
+	<% end %>
+  </div>
+  <p>
+    <%= f.submit action_name %>
+  </p>
+<% end %>

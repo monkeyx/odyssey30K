@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/odyssey30k/!svn/ver/2/trunk/app/views/deposits
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/2/trunk/app/views/deposits/edit.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/odyssey30k/!svn/ver/2/trunk/app/views/deposits/new.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/2/trunk/app/views/deposits/_form.html.erb
+END

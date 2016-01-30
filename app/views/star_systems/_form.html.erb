@@ -1,0 +1,35 @@
+<% form_for(@star_system) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :x %><br />
+    <%= f.text_field :x, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :y %><br />
+    <%= f.text_field :y, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :star_type %><br />
+    <%= f.select :star_type, options_from_symbols(StarSystem::STAR_TYPES) %>
+  </p>
+  <p>
+    <%= f.label :sec_zone %><br />
+    <%= f.select :sec_zone, options_from_symbols(StarSystem::SEC_ZONES) %>
+  </p>
+  <p>
+    <%= f.label :cluster %><br />
+    <%= f.select :cluster_id, options_from_models(@clusters) %>
+  </p>
+  <p>
+    <%= f.label :node_links %><br />
+    <%= select_tag 'star_system[node_links][]', options_for_select(options_from_models(@star_systems),@star_system.node_links.map{|ss|ss.id}), {:multiple => true, :size => 5} %>
+  </p>
+  <p>
+    <%= f.submit action_name %>
+  </p>
+<% end %>

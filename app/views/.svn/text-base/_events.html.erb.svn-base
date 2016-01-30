@@ -1,0 +1,17 @@
+<% content_for :events do %>
+	<% events = Event.for_model(model).recent_events %>
+	<% if events.size < 1%>
+		<p>None yet.</p>
+	<% else %>
+		<table>
+		<% events.each do |event| %>
+		<tr>
+			<th><%=format_date event.created_at%></th>
+		</tr>
+		<tr>
+			<td><%=h event.description %></td>	
+		</tr>
+		<% end %>
+		</table>
+	<% end %>
+<% end %>

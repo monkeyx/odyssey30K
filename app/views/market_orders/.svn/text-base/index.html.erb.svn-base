@@ -1,0 +1,56 @@
+<h1><%=title "Galactic Market"%></h1>
+
+<%=market_filter_form%>
+<table>
+  <tr>
+    <th>Buyer / Seller</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Colony</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Star System</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Item</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Buy quantity</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Sell quantity</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Price</th>
+	<% if current_user.zeus? %>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Destination</th>
+	<% end %>
+  </tr>
+
+<% @market_orders.each do |market_order| %>
+  <tr>
+    <td><%=link_to_user market_order.user %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=link_to market_order.colony, market_order.colony %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=link_to market_order.colony.planet.star_system, market_order.colony.planet.star_system %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=item_link market_order.item, market_order.item %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h market_order.buy_quantity %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h market_order.sell_quantity %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=drachma market_order.price %></td>
+	<% if current_user.zeus? %>
+	<td>&nbsp;|&nbsp;</td>
+    <td><% if market_order.destination_model %><%=link_to market_order.destination, market_order.destination%><% end %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Edit', edit_market_order_path(market_order) %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Destroy', market_order, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td>&nbsp;|&nbsp;</td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<% if current_user.zeus? %>
+<br />
+<%= link_to 'New market order', new_market_order_path %>
+<% end %>

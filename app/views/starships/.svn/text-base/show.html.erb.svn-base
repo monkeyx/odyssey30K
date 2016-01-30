@@ -1,0 +1,80 @@
+<h1><%=title_editable(@starship.name, "#{starship_path}/change_name")%></h1>
+
+<% if @starship.squadron %>
+<p>
+  <b>Squadron:</b>
+  <%=link_to @starship.squadron.name, @starship.squadron %>
+</p>
+<% end %>
+
+<p>
+  <b>Currently <%=starship_location(@starship) %></b>
+</p>
+
+<p>
+  <b>Chassis:</b>
+  <%=item_link @starship.chassis.name, @starship.chassis %>
+</p>
+<p>
+  <b>Crew Efficiency:</b>
+  <%=format_number @starship.crew_efficiency.round(2) %>%
+</p>
+<p>
+  <b>Combat Efficiency:</b>
+  <%=format_number @starship.combat_efficiency.round(2) %>%
+</p>
+<p>
+  <b>Hull Integrity:</b>
+  <%=format_number @starship.current_integrity.round(2) %>%
+</p>
+<p>
+  <b>Energy:</b>
+  <%=format_number @starship.current_energy.round(2) %>
+</p>
+<% if @starship.cargo_capacity > 0 || @starship.free_cargo_capacity < 0%>
+<p <%if @starship.free_cargo_capacity < 0%>class="error"<% end %>>
+	<b>Cargo Capacity:</b> 
+	<%=format_number @starship.free_cargo_capacity %> / <%=format_number @starship.cargo_capacity %>
+</p>
+<% end %>
+<% if @starship.ore_capacity > 0 || @starship.free_ore_capacity < 0 %>
+<p <%if @starship.free_ore_capacity < 0%>class="error"<% end %>>
+	<b>Ore Capacity:</b> 
+	<%=format_number @starship.free_ore_capacity %> / <%=format_number @starship.ore_capacity %>
+</p>
+<% end %>
+<% if @starship.resource_capacity > 0 || @starship.free_resource_capacity < 0 %>
+<p <%if @starship.free_resource_capacity < 0%>class="error"<% end %>>
+	<b>Resource Capacity:</b> 
+	<%=format_number @starship.free_resource_capacity %> / <%=format_number @starship.resource_capacity %>
+</p>
+<% end %>
+<% if @starship.life_capacity > 0 || @starship.free_life_capacity < 0 %>
+<p <%if @starship.free_life_capacity < 0%>class="error"<% end %>>
+	<b>Life Capacity:</b> 
+	<%=format_number @starship.free_life_capacity %> / <%=format_number @starship.life_capacity %>
+</p>
+<% end %>
+<% if @starship.overcapacity? %>
+<p class="error">
+	<b>Cargo Overcapacity:</b>
+	No ship movement possible.
+</p>
+<% end %>
+<%= hideable_section('Ship Sections') do 
+	render :partial => 'sections'
+end
+%>
+<%= hideable_section('Crew') do 
+	render :partial => 'crew'
+end
+%>
+<%= hideable_section('Cargo') do
+	render :partial => 'cargo'
+end
+%>
+<%=render :partial => '/toolbar_starship', :locals => {:model => @starship} %>
+<%=render :partial => "/events", :locals => {:model => @starship} %>
+<% if current_user.starships.size > 1%>
+<%= link_to 'Back', starships_path %>
+<% end %>

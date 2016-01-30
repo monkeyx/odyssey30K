@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/odyssey30k/!svn/ver/13/trunk/lib
+END
+role_requirement_test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/odyssey30k/!svn/ver/5/trunk/lib/role_requirement_test_helper.rb
+END
+authenticated_test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/2/trunk/lib/authenticated_test_helper.rb
+END
+hijacker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/odyssey30k/!svn/ver/5/trunk/lib/hijacker.rb
+END
+item_container.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/odyssey30k/!svn/ver/13/trunk/lib/item_container.rb
+END
+industry.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/odyssey30k/!svn/ver/2/trunk/lib/industry.rb
+END
+probability_matrix.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/odyssey30k/!svn/ver/9/trunk/lib/probability_matrix.rb
+END
+role_requirement_system.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/odyssey30k/!svn/ver/5/trunk/lib/role_requirement_system.rb
+END
+attributes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/odyssey30k/!svn/ver/5/trunk/lib/attributes.rb
+END
+authenticated_system.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/odyssey30k/!svn/ver/2/trunk/lib/authenticated_system.rb
+END
+data_handler.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/odyssey30k/!svn/ver/2/trunk/lib/data_handler.rb
+END
+name_generator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/odyssey30k/!svn/ver/2/trunk/lib/name_generator.rb
+END
+quotations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/odyssey30k/!svn/ver/6/trunk/lib/quotations.rb
+END
+roman.rb
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/odyssey30k/!svn/ver/2/trunk/lib/roman.rb
+END

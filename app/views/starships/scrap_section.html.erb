@@ -1,0 +1,33 @@
+<h2>Scrap Ship Section</h2>
+<div id="form-error" class="error"></div>
+<div id="notice">
+	<table>
+		<tr>
+			<th>Section</th><th></th>
+		</tr>		
+	<% @starship.installed_sections.each do |section, quantity| 
+		form_id = "scrap-section-#{section.id}"
+	%>
+	<tr>
+		<td>
+			<%=item_link section.name, section %>
+		</td>
+		<td>
+		<% form_tag("#{starship_path(@starship)}/scrap_section", :method => :get, :id => form_id) do %>
+			<%=hidden_field_tag :section, section.id %>
+			<%=submit_tag 'Scrap' %>
+		<% end %>
+		<script type="text/javascript"> 
+		    $(document).ready(function() { 
+		        $('#<%=form_id%>').ajaxForm({ 
+		        dataType:  'json', 
+				beforeSubmit: preProcessAjaxForm,
+		        success:   processAjaxJsonForm
+		    	}); 
+		    }); 
+		</script> 
+		</td>
+	</tr>
+	<% end %>
+	</table>
+</div>

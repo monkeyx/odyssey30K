@@ -1,0 +1,92 @@
+<h1><%=title "#{@star_system.name} System" %></h1>
+
+<p>
+  <b>Galactic Coordinates:</b>
+  (<%=h @star_system.x %>, <%=h @star_system.y %>)
+</p>
+<p>
+  <b>Star Type:</b>
+  <%=h_symbol @star_system.star_type %>
+</p>
+<p>
+  <b>Security Zone:</b>
+  <%=h_symbol @star_system.sec_zone %>
+</p>
+<p>
+  <b>Cluster:</b>
+  <%=h @star_system.cluster.name %>
+</p>
+
+<h2>Node Links</h2>
+<% if @star_system.node_links.any? %>
+<table>
+	<tr>
+		<th>Star System</th>
+		<th>&nbsp;|&nbsp;</th>
+		<th>Distance</th>	
+	</tr>
+	<% @star_system.node_links.sort_by{|s| @star_system.distance(s)}.each do |ss| %>
+	<tr>
+		<td><%=link_to ss.name, ss%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h @star_system.distance(ss)%></td>
+	</tr>
+	<% end %>
+</table>
+<% else %>
+<p>
+	<em>No node links</em>
+</p>
+<% end %>
+
+<h2>Celestial Bodies</h2>
+<% if @star_system.bodies.any? %>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>&nbsp;|&nbsp;</th>
+		<th>Orbit</th>
+		<th>&nbsp;|&nbsp;</th>
+		<th>Quadrant</th>
+		<th>&nbsp;|&nbsp;</th>
+		<th>Type</th>
+		<th>&nbsp;|&nbsp;</th>
+		<th>Colony</th>
+	</tr>
+	<% @star_system.bodies.each do |body| %>
+	<tr>
+		<td><%=link_to body.name, body%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h_roman_numeral body.orbital_ring%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h_greek_number body.orbital_quadrant%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h_symbol body.body_type%> <% if body.body_type == 'planet' || body.body_type == 'moon' %>(<%=h_symbol body.atmosphere_type %> <%=h_symbol body.surface_type%>)<% end %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td>
+			<% if body.colony %>
+			<%=link_to body.colony.name, body.colony %>
+			<% end %>
+		</td>
+		<% if current_user.zeus? %>
+		<td><%= link_to 'Edit', edit_celestial_body_path(body) %></td>
+		<td>&nbsp;|&nbsp;</td>
+    	<td><%= link_to 'Destroy', body, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+<% else %>
+<p>
+	<em>No celestial bodies</em>
+</p>
+<% end %>
+<% if current_user.zeus? %>
+<p>
+	<%= link_to 'New Celestial Body', "#{new_celestial_body_path}?star_system_id=#{@star_system.id}" %>
+</p>
+<p>
+	<%= link_to 'Edit', edit_star_system_path(@star_system) %> | 
+	<%= link_to 'Back', star_systems_path %>
+</p>
+<% end %>

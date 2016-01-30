@@ -1,0 +1,31 @@
+<% form_for(@knowledge) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :knowledge_type %><br />
+    <%= f.select :knowledge_type, options_from_symbols(Knowledge::KNOWLEDGE_TYPES) %>
+  </p>
+  <p>
+    <%= f.label :prequisite_id %><br />
+    <%= f.select :prequisite_id, options_from_models(@knowledges,true) %>
+  </p>
+  <p>
+    <%= f.label :allows_production_id %><br />
+    <%= f.select :allows_production_id, options_from_models(@items,true) %>
+  </p>
+  <p>
+    <%= f.label :officer_skill_attribute %><br />
+    <%= f.select :officer_skill_attribute, options_from_symbols(Attributes::ALL,true) %>
+  </p>
+  <p>
+    <%= f.label :attribute_modifier %><br />
+    <%= f.text_field :attribute_modifier %>
+  </p>
+  <p>
+    <%= f.submit action_name %>
+  </p>
+<% end %>

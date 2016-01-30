@@ -1,0 +1,36 @@
+<h1><%=title "Sign up for a voyage to the stars"%></h1>
+<% @user.password = @user.password_confirmation = nil %>
+
+<%= error_messages_for :user %>
+<% form_for :user, :url => users_path do |f| -%>
+<p>
+	<%= f.label "Your real name:" %><br/>
+	<%= f.text_field :name %><br/>
+</p>
+
+<p>
+	<%= f.label "Your adventurer's name:" %><br/>
+	<%= f.text_field :login %><br/>
+	<small>This is the name you will be known as throughout the colonies.</small>
+</p>
+
+<p>
+	<%= f.label "Your email address:" %><br/>
+	<%= f.text_field :email %><br/>
+	<small>We will send your activation link to this address.</small>
+</p>
+
+<p>
+	<%= f.label :password %><br/>
+	<%= f.password_field :password %><br/>
+</p>
+
+<p>
+	<%= f.label :password_confirmation, 'Confirm Password' %><br/>
+	<%= f.password_field :password_confirmation %><br/>
+</p>
+
+<p>
+	<%= submit_tag 'Begin your adventure' %>
+</p>
+<% end -%>

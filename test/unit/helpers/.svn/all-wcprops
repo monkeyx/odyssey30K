@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/odyssey30k/!svn/ver/9/trunk/test/unit/helpers
+END
+squadrons_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/squadrons_helper_test.rb
+END
+buildings_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/buildings_helper_test.rb
+END
+starships_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/starships_helper_test.rb
+END
+items_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/items_helper_test.rb
+END
+crews_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/crews_helper_test.rb
+END
+money_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/odyssey30k/!svn/ver/9/trunk/test/unit/helpers/money_helper_test.rb
+END
+home_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/home_helper_test.rb
+END
+admin_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/admin_helper_test.rb
+END
+deposits_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/deposits_helper_test.rb
+END
+celestial_bodies_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/celestial_bodies_helper_test.rb
+END
+building_items_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/building_items_helper_test.rb
+END
+star_systems_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/star_systems_helper_test.rb
+END
+market_orders_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/market_orders_helper_test.rb
+END
+knowledges_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/knowledges_helper_test.rb
+END
+item_attributes_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/item_attributes_helper_test.rb
+END
+clusters_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/clusters_helper_test.rb
+END
+colonies_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/colonies_helper_test.rb
+END
+colonists_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/odyssey30k/!svn/ver/2/trunk/test/unit/helpers/colonists_helper_test.rb
+END

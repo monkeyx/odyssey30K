@@ -1,0 +1,46 @@
+<h2>Market Data</h2>
+<table>
+	<tr>
+		<th>Item</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Buy Price</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Sell Price</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Demand</th>
+	</tr>
+	<% Item.known_by_user(current_user).each do |item| %>
+	<%
+		mean_buy_price = MarketOrder.mean_buy_price(colony, [item])
+		mean_sell_price = MarketOrder.mean_sell_price(colony, [item])
+
+		if mean_buy_price || mean_sell_price
+	%>
+	<tr>
+		<td>
+			<%=link_to item, "/market_orders?filter=#{item.sub_category.pluralize}&colony=#{colony.id}"%>
+		</td>
+		<td>&nbsp;|&nbsp;</td>
+		<td>
+			<%=drachma(mean_buy_price)%>
+		</td>
+		<td>&nbsp;|&nbsp;</td>
+		<td>
+			<%=drachma(mean_sell_price)%>
+		</td>
+		<td>&nbsp;|&nbsp;</td>
+		<td>
+			<% demand = MarketOrder.demand_level(colony, [item])[0]%>
+			<% if demand > 0%>
+			<span style="color:green">High</span>
+			<% elsif demand < 0%>
+			<span style="color:red">Low</span>
+			<% else %>
+			<span style="color:orange">Equillibrium</span>
+			<% end %>
+		</td>
+	</tr>
+	<% 
+		end
+	end %>
+</table>

@@ -1,0 +1,54 @@
+<h1><%=title "#{h_symbol(@knowledge.knowledge_type)} #{@knowledge.name}" %></h1>
+
+<% if @knowledge.prequisite %>
+<p>
+  <b>Prequisite:</b>
+  <%=link_to "#{h_symbol(@knowledge.prequisite.knowledge_type)} #{@knowledge.prequisite.name}", @knowledge.prequisite %>
+</p>
+<% end %>
+
+<% if @knowledge.allows_production %>
+<p>
+  <b>Allows production:</b>
+  <%=link_to @knowledge.allows_production.name, @knowledge.allows_production %>
+</p>
+<% end %>
+
+<% unless @knowledge.officer_skill_attribute.nil? || @knowledge.officer_skill_attribute.empty? %>
+<p>
+  <b>Officer skill attribute:</b>
+  <%=h @knowledge.attribute_modifier %> <%=h_symbol @knowledge.officer_skill_attribute %>
+</p>
+<% end %>
+
+<% if @knowledge.children.any? %>
+<h2>Enables</h2>
+<ul>
+	<% @knowledge.children.each do |k| %>
+	<li>
+		<%=link_to "#{h_symbol(k.knowledge_type)} #{k.name}", k %>
+		<% if k.children.any? %>
+		<ul>
+			<% k.children.each do |j| %>
+			<li>
+				<%=link_to "#{h_symbol(j.knowledge_type)} #{j.name}", j %>
+				<% if j.children.any? %>
+					<ul>
+					<% j.children.each do |m| %>
+						<li>
+							<%=link_to "#{h_symbol(m.knowledge_type)} #{m.name}", m %>
+						</li>
+					<% end %>
+					</ul>
+				<% end %>
+			</li>	
+			<% end %>
+		</ul>
+		<% end %>
+	</li>
+	<% end %>
+</ul>
+<% end %>
+
+<%= link_to 'Edit', edit_knowledge_path(@knowledge) %> |
+<%= link_to 'Back', knowledges_path %>

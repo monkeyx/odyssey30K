@@ -1,0 +1,8 @@
+<h2><%=h heading%></h2>
+<small><%=h sub_heading%></small>
+<div class="entry">
+	<%=h content%>
+</div>
+<p class="postmetadata">
+	<%=h postmetadata%>
+</p>

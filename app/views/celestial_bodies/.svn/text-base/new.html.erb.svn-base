@@ -1,0 +1,5 @@
+<h1><%=title "New Celestial Body"%></h1>
+
+<%=render :partial => 'form', :locals => {:action_name => 'Create'} %>
+
+<%= link_to 'Back', @celestial_body.star_system %>

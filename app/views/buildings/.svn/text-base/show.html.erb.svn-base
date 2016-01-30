@@ -1,0 +1,98 @@
+<h1><%=title "#{@building} of #{@building.colony}" %></h1>
+<% if @building.unique? %>
+<p>
+  <b><em>Unique</em></b>
+</p>
+<% end %>
+<p>
+  <b>Owner:</b>
+  <%=link_to_user @building.owner %>
+</p>
+<p>
+  <b>Level:</b>
+  <%=h @building.level %>
+</p>
+<p>
+  <b>Efficiency:</b>
+  <%=h @building.efficiency %>%
+</p>
+<h2>Employees</h2>
+<% if @building.colonists.any? %>
+	<ul>
+	<% @building.colonists.each do |colonist |%>
+	<li>
+		<% if colonist.unique? %>
+			<%=h colonist.name%> (<%=h colonist.wealth%> <%=h colonist.lifeform%>)
+			<% if colonist.knowledge.any? %>
+			<ul>
+				<% colonist.knowledge.each do |knowledge| %>
+				<li><%=h knowledge%></li>
+				<% end %>
+			</ul>
+			<% end %>
+		<% else %>
+			<% if colonist.unique? %>
+			<%=h colonist.name%> (<%=h colonist.wealth%> <%=h colonist.lifeform%>) 
+			<% else %>
+			<%=h colonist.quantity%> x <%=h colonist.wealth%> <%=h colonist.name%>
+			<% end %>
+			&mdash; <%=h colonist.morale%>% morale
+		<% end %>
+	</li>
+	<% end %>
+	</ul>
+<% else %>
+<p>None</p>
+<% end %>
+<%=render :partial => "/events", :locals => {:model => @building} %>
+<% if @building.production_items.size > 0 %>
+<h2>Production Queue</h2>
+<ol>
+	<% @building.production_items.each do | pi| %>
+	<li>
+		<%=link_to "#{pi.quantity} #{pi.item} &mdash; #{pi.produced} carried", pi.item %>
+	</li>
+	<% end %>
+</ol>
+<% end %>
+<% if @building.store? %>
+	<h2>Storage</h2>
+	<% if @building.cargo_capacity > 0 %>
+		<p>
+			<b>Cargo Capacity:</b>
+			<%=h @building.free_cargo_capacity %> / <%=h @building.cargo_capacity%>
+		</p>
+	<% end %>
+	<% if @building.ore_capacity > 0 %>
+		<p>
+			<b>Ore Capacity:</b>
+			<%=h @building.free_ore_capacity %> / <%=h @building.ore_capacity%>
+		</p>
+	<% end %>
+	<% if @building.resource_capacity > 0 %>
+		<p>
+			<b>Resource Capacity:</b>
+			<%=h @building.free_resource_capacity %> / <%=h @building.resource_capacity%>
+		</p>
+	<% end %>
+	<% if @building.life_capacity > 0 %>
+		<p>
+			<b>Life Capacity:</b>
+			<%=h @building.free_life_capacity %> / <%=h @building.life_capacity%>
+		</p>
+	<% end %>
+	<% if @building.items.any? %>
+	<ul>
+		<% @building.items.each do |item| %>
+		<li>
+			<%=h item.quantity%> x <%=link_to item.item %>
+		</li>
+		<% end %>
+	</ul>
+	<% else %>
+	<p>None</p>
+	<% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_building_path(@building) %> |
+<%= link_to 'Back', @building.colony %>

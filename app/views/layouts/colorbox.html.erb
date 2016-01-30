@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <%= stylesheet_link_tag 'odyssey30', :media => "all" %>
+  <%= stylesheet_link_tag 'greek', :media => "all" %>
+  <%= stylesheet_link_tag 'colorbox', :media => "all" %>
+  <%= stylesheet_link_tag 'loadmask', :media => "all" %>
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js", 
+			'jquery.editable-1.3.3.min',
+			'jquery.colorbox-min',
+			'jquery.loadmask.min',
+			'jquery.form',
+  			'application', :cache => "odyssey30k" %>
+</head>
+<body>
+<%=yield %>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".item-link").live('click', function() {
+            parent.colorbox({
+                href:$(this).attr('href')
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

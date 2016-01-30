@@ -1,0 +1,11 @@
+<% if @starship.cargo.any? %>
+<ul>
+	<%@starship.cargo.each do |ship_cargo| %>
+	<li>
+		<%=item_link "#{ship_cargo.quantity} x #{ship_cargo.quantity > 1 ? ship_cargo.item.name.pluralize : ship_cargo.item.name}", ship_cargo.item %>
+	</li>
+	<% end %>
+</ul>
+<% else %>
+<p>None.</p>
+<% end %>

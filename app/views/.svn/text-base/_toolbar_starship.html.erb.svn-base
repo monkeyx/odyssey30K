@@ -1,0 +1,25 @@
+<% content_for :toolbar do %>
+<ul>
+	<% if @starship.colony %>
+		<%=toolbar_form_item("Buy Goods at #{@starship.colony} [0E]", "#{starship_path(@starship)}/buy", "buy-goods")%>
+		<%=toolbar_form_item("Sell Goods at #{@starship.colony} [0E]", "#{starship_path(@starship)}/sell", "sell-goods")%>
+		<%=toolbar_form_item("Install Section [0E]", "#{starship_path(@starship)}/install_section", "install-section")%>
+		<%=toolbar_form_item("Scrap Section [0E]", "#{starship_path(@starship)}/scrap_section", "scrap-section")%>
+		<%=toolbar_form_item("Hire Crew [0E]", "#{starship_path(@starship)}/hire_crew", "hire-crew")%>
+		<%=toolbar_form_item("Sack Crew [0E]", "#{starship_path(@starship)}/sack_crew", "sack-crew")%>
+		<% unless @starship.overcapacity? %>
+			<%=toolbar_item("Take Off [#{@starship.energy_cost_take_off_or_land}E]", "#{starship_path(@starship)}/take_off")%>
+		<% end %>
+	<% else %>
+		<%=toolbar_item("Scan Location [#{Starship::ACTIVE_SCAN_ENERGY_COST}E]", "#{starship_path(@starship)}/scan")%>
+		<%=toolbar_item("Probe #{@starship.celestial_body.body_type_string} [#{Starship::PROBE_ENERGY_COST}E]", "#{starship_path(@starship)}/probe")%>
+		<% unless @starship.overcapacity? %>
+			<% if @starship.celestial_body.colony %>
+			<%=toolbar_item("Dock At #{@starship.celestial_body.colony} [#{@starship.energy_cost_take_off_or_land}E]", "#{starship_path(@starship)}/dock")%>
+			<% end %>
+			<%=toolbar_move_to_planets(@starship)%>
+			<%=toolbar_dock_at_colonies(@starship)%>
+		<% end %>
+	<% end %>
+</li>
+<% end %>

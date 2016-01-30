@@ -1,0 +1,6 @@
+<h1><%=title "Editing #{@building.building_type} in #{@building.colony.name}" %></h1>
+
+<%=render :partial => 'form', :locals => {:action_name => 'Update' } %>
+
+<%= link_to 'Show', @building %> |
+<%= link_to 'Back', @building.colony %>

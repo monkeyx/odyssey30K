@@ -1,0 +1,28 @@
+<h1><%=title 'Cash Ledger'%></h1>
+
+<table>
+	<tr>
+		<th>Date</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Sender</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Receiver</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Amount</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Reason</th>
+	</tr>
+	<% @monies.each do |money| %>
+	<tr>
+		<td><%=format_date money.created_at %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=(money.sender_id ? link_to_user(money.sender) : '')%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=(money.receiver_id ? link_to_user(money.receiver) : '')%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=drachma money.amount.to_i%></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h money.reason %></td>
+	</tr>
+	<% end %>
+</table>

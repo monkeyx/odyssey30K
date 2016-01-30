@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/odyssey30k/!svn/ver/6/trunk/app/views/home
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/odyssey30k/!svn/ver/6/trunk/app/views/home/index.html.erb
+END
+_welcome.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/6/trunk/app/views/home/_welcome.html.erb
+END
+_introduction.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/odyssey30k/!svn/ver/6/trunk/app/views/home/_introduction.html.erb
+END

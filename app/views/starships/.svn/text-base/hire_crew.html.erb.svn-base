@@ -1,0 +1,41 @@
+<h2>Hire Crew</h2>
+<div id="form-error" class="error"></div>
+<div id="notice">
+<table border="1">
+	<tr>
+		<th>Seller</th><th>Item</th><th>Quantity Available</th><th>Price</th><th>Buy Quantity</th>
+	</tr>
+<% @market_orders.each do |mo| %>
+<% if @starship.can_hire_crew(mo.item) > 0 && @starship.captain.drachma >= mo.price %>
+  <% form_id = "market_order_#{mo.id}" %>
+  <% form_for(@market_order, :html => {:id => form_id, :method => 'post'}) do |f| %>
+  	<%=f.hidden_field :colony_id %>
+  	<%=f.hidden_field :destination_id %>
+  	<%=f.hidden_field :destination_model %>
+  	<%=f.hidden_field :item_id, :value => mo.item_id %>
+  	<%=f.hidden_field :price, :value => mo.price %>
+	<%=f.hidden_field :ship_crew %>
+	<tr>
+	<td><%=link_to_user mo.user %></td>
+	<td><%=item_link mo.item.name, mo.item %></td>
+	<td><%=h mo.sell_quantity%></td>
+	<td><%=drachma mo.price %></td>
+	<td>
+	    <%= f.text_field :buy_quantity, :value => @starship.can_hire_crew(mo.item), :size => 4, :maxlength => 12 %>
+	</td>
+	<td><%= f.submit "Hire" %></td>
+	</tr>
+	<script type="text/javascript"> 
+	    $(document).ready(function() { 
+	        $('#<%=form_id%>').ajaxForm({ 
+	        dataType:  'json', 
+			beforeSubmit: preProcessAjaxForm,
+	        success:   processAjaxJsonForm
+	    	}); 
+	    }); 
+	</script> 
+  <% end %>
+<% end %>
+<% end %>
+</table>
+</div>

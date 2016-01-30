@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  body_type: MyString
+  star_system_id: 1
+  orbital_ring: 1
+  orbital_quadrant: 1
+  gravity_rating: 1.5
+  atmosphere_type: MyString
+  surface_type: MyString
+
+two:
+  name: MyString
+  body_type: MyString
+  star_system_id: 1
+  orbital_ring: 1
+  orbital_quadrant: 1
+  gravity_rating: 1.5
+  atmosphere_type: MyString
+  surface_type: MyString

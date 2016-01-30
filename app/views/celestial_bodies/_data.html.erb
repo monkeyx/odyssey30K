@@ -1,0 +1,42 @@
+<p>
+  <b>Location:</b>
+  <%=link_to celestial_body.star_system.name, celestial_body.star_system %> &nbsp;
+  <%=h_roman_numeral celestial_body.orbital_ring %> &nbsp;
+  <%=h_greek_number celestial_body.orbital_quadrant %>
+</p>
+
+<p>
+  <b>Gravity Rating:</b>
+  <%=format_number celestial_body.gravity_rating.round(1) %>g
+</p>
+
+<p>
+  <b>Atmosphere Type:</b>
+  <%=h_symbol celestial_body.atmosphere_type %>
+</p>
+
+<p>
+  <b>Surface Type:</b>
+  <%=h_symbol celestial_body.surface_type %>
+</p>
+
+<% if celestial_body.colony %>
+<p>
+  <b>Colony:</b>
+  <%=link_to celestial_body.colony, celestial_body.colony%>
+</p>
+<% end %>
+
+<% if celestial_body.supports_life? %>
+<p>
+  <b>Supports Life</b>&nbsp;
+  <%=format_number celestial_body.morale_modifier %>% morale &nbsp;
+  <%=format_number celestial_body.colonist_growth_rate %>% growth rate &nbsp;
+</p>
+<% end %>
+
+<% if celestial_body.terraformable? %>
+<p>
+  <b>Terraformable</b>
+</p>
+<% end %>

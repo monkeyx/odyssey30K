@@ -1,0 +1,6 @@
+<h1><%=title "Editing #{h_symbol(@knowledge.knowledge_type)} #{@knowledge.name}" %></h1>
+
+<%=render :partial => 'form', :locals => {:action_name => 'Update'} %>
+
+<%= link_to 'Show', @knowledge %> |
+<%= link_to 'Back', knowledges_path %>

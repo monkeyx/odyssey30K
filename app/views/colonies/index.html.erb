@@ -1,0 +1,41 @@
+<h1><%=title "Listing colonies"%></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Location</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Governor</th>
+	<td>&nbsp;|&nbsp;</td>
+	<th>Building Policy</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Tax rate</th>
+	<td>&nbsp;|&nbsp;</td>
+	<th>Update day</th>
+  </tr>
+
+<% @colonies.each do |colony| %>
+  <tr class="<%=colony.open? ? 'open' : colony.limited? ? 'limited' : 'closed'%>">
+    <td><%=link_to colony.name, colony %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=link_to colony.celestial_body.name, colony.celestial_body%></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h colony.governor.login %></td>
+	<td>&nbsp;|&nbsp;</td>
+	<td><%=h colony.building_policy %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h colony.tax_rate %>%</td>
+	<td>&nbsp;|&nbsp;</td>
+	<td><%=h colony.update_day_name %></td>
+    <td><%= link_to 'Edit', edit_colony_path(colony) %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Destroy', colony, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New colony', new_colony_path %> |
+<%= link_to 'Admin Home', admin_path %>

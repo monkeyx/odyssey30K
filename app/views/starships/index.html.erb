@@ -1,0 +1,27 @@
+<h1><%=title "Your Starships"%></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Location</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Chassis</th>
+  </tr>
+
+<% @starships.each do |starship| %>
+  <tr>
+    <td><%=link_to starship.name, starship %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=starship_location(starship).titleize%></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h starship.chassis.name %></td>
+	<% if current_user.zeus? %>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Edit', edit_starship_path(starship) %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Destroy', starship, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>

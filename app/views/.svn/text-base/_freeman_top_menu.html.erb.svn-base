@@ -1,0 +1,9 @@
+	<li class="page_item"><%=menu_item "Map of the Cosmos", "/map"%></li>
+	<li class="page_item"><%=menu_item "Oracle", "/items" %>
+		<ul>
+			<% Item::SUB_CATEGORIES.each do |category| %>
+				<li class="page_item"><%=menu_item category.pluralize.capitalize, "#{items_path}?filter=#{category.pluralize}" %></li>
+			<% end %>
+		</ul>
+	</li>
+	<li class="page_item"><%=menu_item "Galactic Market", "/market_orders"%></li>

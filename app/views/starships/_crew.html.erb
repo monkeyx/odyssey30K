@@ -1,0 +1,11 @@
+<% if @starship.crew.any? %>
+<ul>
+	<%@starship.crew.each do |crew| %>
+	<li>
+		<%=item_link "#{crew.quantity} x #{crew.quantity > 1 ? crew.name.pluralize : crew.name}", crew.lifeform %>
+	</li>
+	<% end %>
+</ul>
+<% else %>
+<p>None.</p>
+<% end %>

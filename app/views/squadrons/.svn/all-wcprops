@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/odyssey30k/!svn/ver/2/trunk/app/views/squadrons
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/2/trunk/app/views/squadrons/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/odyssey30k/!svn/ver/2/trunk/app/views/squadrons/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/2/trunk/app/views/squadrons/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/2/trunk/app/views/squadrons/show.html.erb
+END

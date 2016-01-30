@@ -1,0 +1,6 @@
+<h1><%=title "Editing Star System #{@star_system.name}" %></h1>
+
+<%=render :partial => 'form', :locals => {:action_name => 'Update'} %>
+
+<%= link_to 'Show', @star_system %> |
+<%= link_to 'Back', star_systems_path %>

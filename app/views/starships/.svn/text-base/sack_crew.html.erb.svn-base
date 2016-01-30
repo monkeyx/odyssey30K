@@ -1,0 +1,10 @@
+<h2>Sack Crew</h2>
+<div id="form-error" class="error"></div>
+<div id="notice">
+  <table border="1">
+  	<tr>
+  		<th>Item</th><th>Quantity Available</th><th>Sell Price</th><th>Sell Quantity</th>
+		<%=render :partial => 'sell_listings', :locals => {:items => @starship.crew.map{|sc|sc.lifeform}}%>
+  	</tr>
+  </table>
+</div>

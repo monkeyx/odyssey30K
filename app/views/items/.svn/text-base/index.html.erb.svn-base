@@ -1,0 +1,39 @@
+<h1><%=title "The Oracle"%></h1>
+<p>Below you will find a listing of items in the universe known to you.</p>
+<%=filter_form(Item::ALLOWED_FILTERS)%>
+<table>
+  <tr>
+    <th>Name</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Mass</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Category</th>
+	<td>&nbsp;|&nbsp;</td>
+    <th>Sub category</th>
+	<td>&nbsp;|&nbsp;</td>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%=item_link item.name, item %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h item.mass %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h_symbol item.category %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%=h_symbol item.sub_category %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <% if current_user.zeus? %>
+	<td><%= link_to 'Edit', edit_item_path(item) %></td>
+	<td>&nbsp;|&nbsp;</td>
+    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<% if current_user.zeus? %>
+<br />
+<%= link_to 'New item', new_item_path %> |
+<%= link_to 'Admin Home', admin_path %>
+<% end %>

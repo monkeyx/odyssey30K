@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/odyssey30k/!svn/ver/16/trunk/app/views
+END
+_top_menu.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/odyssey30k/!svn/ver/6/trunk/app/views/_top_menu.html.erb
+END
+_javascripts.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/odyssey30k/!svn/ver/11/trunk/app/views/_javascripts.html.erb
+END
+_block.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/odyssey30k/!svn/ver/8/trunk/app/views/_block.html.erb
+END
+_citizen_top_menu.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/odyssey30k/!svn/ver/6/trunk/app/views/_citizen_top_menu.html.erb
+END
+_zeus_top_menu.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/odyssey30k/!svn/ver/6/trunk/app/views/_zeus_top_menu.html.erb
+END
+_footer.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/odyssey30k/!svn/ver/2/trunk/app/views/_footer.html.erb
+END
+_info_bar.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/odyssey30k/!svn/ver/6/trunk/app/views/_info_bar.html.erb
+END
+_toolbar_starship.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/odyssey30k/!svn/ver/13/trunk/app/views/_toolbar_starship.html.erb
+END
+_senator_top_menu.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/odyssey30k/!svn/ver/6/trunk/app/views/_senator_top_menu.html.erb
+END
+_user_bar.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/odyssey30k/!svn/ver/11/trunk/app/views/_user_bar.html.erb
+END
+_freeman_top_menu.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/odyssey30k/!svn/ver/6/trunk/app/views/_freeman_top_menu.html.erb
+END
+_events.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/odyssey30k/!svn/ver/6/trunk/app/views/_events.html.erb
+END
+_notices.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/odyssey30k/!svn/ver/10/trunk/app/views/_notices.html.erb
+END
+_post.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/odyssey30k/!svn/ver/2/trunk/app/views/_post.html.erb
+END

@@ -1,0 +1,8 @@
+<h1><%=title "Map of the Cosmos"%></h1>
+<% if @current_starship %>
+<p>The stars near the location of your ship <%=link_to @current_starship.name, @current_starship %>, 
+currently <%=starship_location(@current_starship)%>.</p>
+<% end %>
+<div class="galaxy-map">
+<%=galaxy_map(@current_coordinates[0],@current_coordinates[1])%>
+</div>

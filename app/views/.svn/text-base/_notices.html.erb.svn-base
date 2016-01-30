@@ -1,0 +1,19 @@
+<%
+content_for	:notice_body do
+%>
+<h3 class="notice"><%=h flash[:notice]%></h3>
+<h3 class="warning"><%=h flash[:warning]%></h3>
+<h3 class="error"><%=h flash[:error]%></h3>
+<% if flash[:scan] && current_starship.scan.size > 0 %>
+<%=render :partial => '/notices/scan' %>
+<% end %>
+<% if flash[:probe] %>
+<%=render :partial => '/notices/probe' %>
+<% end %>
+<% 
+flash[:notice] = nil
+flash[:warning] = nil
+flash[:error] = nil
+flash[:scan] = nil
+end %>
+<%=render_block(nil, :notice_body) %>

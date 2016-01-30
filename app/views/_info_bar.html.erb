@@ -1,0 +1,49 @@
+<div class="sidebar2">
+	<div class="Block"> 
+			<div class="Block-body"> 
+			<div class="BlockHeader">
+				News
+			</div>
+				<div class="BlockContent"> 
+					<div class="BlockContent-body"> 
+					<% if has_content? :events %>
+						<%= yield :events %>
+					<% elsif logged_in? %>
+						<% events = Event.user(current_user).recent_events %>
+						<% if events.size < 1%>
+							<p>None yet.</p>
+						<% else %>
+							<table>
+							<% events.each do |event| %>
+							<tr>
+								<th><%=format_date event.created_at%></th>
+								<% unless event.model == current_user %><th><%=link_to event.model%></th><% end %>
+							</tr>
+							<tr>
+								<td colspan="2"><%=h event.description %></td>	
+							</tr>
+							<% end %>
+							</table>
+						<% end %>
+					<% else %>
+						<% events = Event.major.recent_events %>
+						<% if events.size < 1%>
+							<p>None yet.</p>
+						<% else %>
+							<table>
+							<% events.each do |event| %>
+							<tr>
+								<th><%=format_date event.created_at%></th>
+							</tr>
+							<tr>
+								<td colspan="2"><%=h event.description %></td>	
+							</tr>
+							<% end %>
+							</table>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

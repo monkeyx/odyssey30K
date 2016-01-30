@@ -1,0 +1,31 @@
+	<ul>
+		<%@starship.installed_sections.each do |section, quantity|%>
+		<li>
+			<%=item_link "#{section.name} x #{quantity}", section%>
+		</li>
+		<% end %>
+	</ul>
+	<table width="40%">
+		<% @starship.starship_attributes.sort{|a,b| a[0]<=>b[0]}.each do |key, value| %>
+		<tr>
+			<th><%=h_symbol key%>:</th>
+			<td>
+			<% if key == Attributes::WEAPON_TYPE %>
+			<%=h Attributes.weapon_type(value)%>
+			<% elsif key == Attributes::KNOWLEDGE_BEARER %>
+			<%=h Attributes.knowledge_bearer(value)%>
+			<% elsif key == Attributes::TRAINED %>
+			<%=h Attributes.trained(value)%>
+			<% elsif key == Attributes::UNIQUE_INDIVIDUAL %>
+			<%=h value == 1 ? 'Yes' : 'No' %>
+			<% elsif key == Attributes::EDUCATION %>
+			<%=h Attributes.educates(value) %>
+			<% elsif key == Attributes::BREEDS_ITEM %>
+			<%=link_to @item.breeds_item.name, @item.breeds_item %>
+			<% else %>
+			<%=format_number value%>
+			<% end %>
+			</td>
+		</tr>
+		<% end %>
+	</table>

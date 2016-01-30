@@ -1,0 +1,19 @@
+<ul class="menu"> 
+	<li class="page_item"><%=menu_item "Home", "/"%></li>
+	<% if logged_in? %>
+		<% if current_user.has_role?('zues') %>
+			<%= render :partial => '/senator_top_menu' %>
+		<% end %>
+		<% if current_user.has_role?('senator') %>
+			<%= render :partial => '/senator_top_menu' %>
+		<% end %>
+		<% if current_user.has_role?('citizen') %>
+			<%= render :partial => '/citizen_top_menu' %>
+		<% end %>
+		<%= render :partial => '/freeman_top_menu' %>
+		<li class="page_item"><%=menu_item "Log Out", "/logout" %></li>
+	<% else %>
+		<li class="page_item"><%=menu_item "Join the Adventure", "/signup"%></li>
+		<li class="page_item"><%=menu_item "About Odyssey 30K", "/about" %></li>
+	<% end %>
+</ul> 

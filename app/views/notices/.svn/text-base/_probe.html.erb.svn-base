@@ -1,0 +1,32 @@
+<h3 class="scan">Probe of <%=h current_starship.celestial_body.name%></h3>
+
+<%=render :partial => '/celestial_bodies/data', :locals => {:celestial_body => current_starship.celestial_body} %>
+
+<% if current_starship.celestial_body.deposits.any? %>
+<table>
+	<tr>
+		<th>Deposit</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Yield</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Reserves</th>
+		<td>&nbsp;|&nbsp;</td>
+		<th>Growth</th>
+		<td>&nbsp;|&nbsp;</td>
+	</tr>
+	<% current_starship.celestial_body.deposits.each do |deposit| %>
+	<tr>
+		<td><%=item_link deposit.item.name, deposit.item %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h deposit.deposit_yield %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h deposit.deposit_reserves %></td>
+		<td>&nbsp;|&nbsp;</td>
+		<td><%=h deposit.deposit_growth %></td>
+		<td>&nbsp;|&nbsp;</td>
+	</tr>
+	<% end %>
+</table>
+<% else %>
+<p>No deposits</p>
+<% end %>
